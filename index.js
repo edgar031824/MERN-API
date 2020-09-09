@@ -18,8 +18,9 @@ server.use('/api/auth', require('./routes/auth'));
 server.use('/api/project', require('./routes/project'));
 server.use('/api/task', require('./routes/task'));
 
-const PORT = process.env.PORT || 4000;
+const port = process.env.port || 4000;
 
-server.listen(PORT, () => {
-	console.log(`running on port ${PORT}`);
+//the '0.0.0.0' is because of heroku will asign the port and the domain
+server.listen(port, '0.0.0.0', () => {
+	console.log(`running on port ${port}`);
 });
